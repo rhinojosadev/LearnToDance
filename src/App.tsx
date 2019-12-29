@@ -1,34 +1,25 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 import Courses from "./modules/courses/Courses";
-
-const useStyles = makeStyles({
-  root: {
-    background: "#bf2323d9",
-    border: 0,
-    color: 'white',
-    height: 48,
-    "& h1": {
-      alignSelf: "center",
-      margin: "auto",
-    }
-  },
-});
+import Salsa from "./modules/courses/salsa/Salsa";
+import Bachata from "./modules/courses/bachata/Bachata";
+import HipHop from "./modules/courses/hiphop/HipHop";
 
 const App: React.FC = () => {
-  const classes = useStyles();
 
   return (
-    <>
-      <Grid container={true} className={classes.root}>
-        <h1>Learn to Dance</h1>
-      </Grid>
+    <Router>
       <Grid container={true}>
-        <Courses/>
+        <Switch>
+          <Route path="/" exact={true} component={Courses} />
+          <Route path="/salsa" component={Salsa} />
+          <Route path="/bachata" component={Bachata} />
+          <Route path="/hiphop" component={HipHop} />
+        </Switch>
       </Grid>
-    </>
+    </Router>
   );
 }
 
