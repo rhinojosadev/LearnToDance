@@ -13,6 +13,7 @@ const useStyles = makeStyles({
         borderRadius: "35px",
         "& a" : {
           textDecoration: "none",
+          color: "black",
         }
     },
   

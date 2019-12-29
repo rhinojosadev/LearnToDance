@@ -1,19 +1,27 @@
 import React from "react";
-import Grid from '@material-ui/core/Grid';
+import {List, ListItem } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { IoIosArrowBack } from "react-icons/io";
+import { Link } from "react-router-dom";
+import { FaVideo } from "react-icons/fa";
+
+import Header from "../../../shared/components/Header"
 
 const useStyles = makeStyles({
-    root: {
-      background: "#bf2323d9",
-      border: 0,
-      color: 'white',
-      height: 48,
-      "& h1": {
-        alignSelf: "center",
-        margin: "auto",
-      }
-    },
-  });
+  root: {
+    width: "100%",
+    padding: 0,
+    "& div": {
+      backgroundColor: "#f5f5f5",
+      borderBottom: "1px solid #969696",
+    }
+  },
+  lesson: {
+    "& p": {
+      marginLeft: "50px",
+    }
+  }
+});
   
 
 const Salsa: React.FC = () => {
@@ -21,9 +29,22 @@ const Salsa: React.FC = () => {
 
     return (
         <>
-            <Grid item={true} xs={12}  className={classes.root}>
-                Back
-            </Grid>
+            <Header>
+                  <Link to={"/"}>
+                    <IoIosArrowBack/>
+                  </Link>
+                  <h1>Salsa</h1>
+            </Header>
+            <List className={classes.root}>
+              <ListItem button className={classes.lesson}>
+                <FaVideo/>
+                <p>Basic Steps</p>
+              </ListItem>
+              <ListItem button  className={classes.lesson}>
+                <FaVideo/>
+                <p>Turn Left</p>
+              </ListItem>
+            </List>
         </>
     );
   }
