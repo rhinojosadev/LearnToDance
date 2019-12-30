@@ -1,9 +1,10 @@
 import React from "react";
-import {List, ListItem } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import {ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails  } from '@material-ui/core';
 import { IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
-import { FaVideo } from "react-icons/fa";
+import { makeStyles } from '@material-ui/core/styles';
+import { FaVideo, FaAngleDown } from "react-icons/fa";
+import YouTube from "react-yt";
 
 import Header from "../../../shared/components/Header"
 
@@ -13,14 +14,14 @@ const useStyles = makeStyles({
     padding: 0,
     "& div": {
       backgroundColor: "#f5f5f5",
-      borderBottom: "1px solid #969696",
+    },
+    "& .MuiExpansionPanelSummary-content": {
+      "& p": {
+        margin: 0,
+        marginLeft: "50px",
+      }
     }
   },
-  lesson: {
-    "& p": {
-      marginLeft: "50px",
-    }
-  }
 });
   
 
@@ -35,16 +36,44 @@ const Salsa: React.FC = () => {
                   </Link>
                   <h1>Salsa</h1>
             </Header>
-            <List className={classes.root}>
-              <ListItem button className={classes.lesson}>
-                <FaVideo/>
-                <p>Basic Steps</p>
-              </ListItem>
-              <ListItem button  className={classes.lesson}>
-                <FaVideo/>
-                <p>Turn Left</p>
-              </ListItem>
-            </List>
+            <div className={classes.root}>
+              <ExpansionPanel>
+                <ExpansionPanelSummary expandIcon={<FaAngleDown />} >
+                  <FaVideo/>
+                  <p>Basic Steps</p>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <YouTube
+                    videoId={'wV8cDpJa2f4'}
+                    autoplay={0}
+                  />
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+              <ExpansionPanel >
+                <ExpansionPanelSummary expandIcon={<FaAngleDown />} >
+                  <FaVideo/>
+                  <p>Turn Right</p>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <YouTube
+                    videoId={'p7Ns9DY7U70'}
+                    autoplay={0}
+                  />
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+              <ExpansionPanel >
+                <ExpansionPanelSummary expandIcon={<FaAngleDown />} >
+                  <FaVideo/>
+                  <p>Turn Left</p>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+                    sit amet blandit leo lobortis eget.
+                  </p>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+            </div>
         </>
     );
   }
