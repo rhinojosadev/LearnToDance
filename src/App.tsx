@@ -1,6 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import {BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
 import Courses from "./modules/courses/Courses";
 import Salsa from "./modules/courses/salsa/Salsa";
@@ -10,7 +10,7 @@ import HipHop from "./modules/courses/hiphop/HipHop";
 const App: React.FC = () => {
 
   return (
-    <BrowserRouter>
+    <Router>
       <Grid container={true}>
         <Switch>
           <Route path="/" exact={true} component={Courses} />
@@ -19,7 +19,7 @@ const App: React.FC = () => {
           <Route path="/hiphop" component={HipHop} />
         </Switch>
       </Grid>
-    </BrowserRouter>
+    </Router>
   );
 }
 
