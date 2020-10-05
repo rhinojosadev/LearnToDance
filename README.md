@@ -4,7 +4,7 @@
 https://rene-ph.github.io/LearnToDance/#/
 
 
-The main goal of this is to have a responsive application where we can see free tutorials and learn how to dance! 
+The main goal it's to have a responsive application where we can see free tutorials and learn how to dance different things! 
 
 :dancer: :dancers:
 
