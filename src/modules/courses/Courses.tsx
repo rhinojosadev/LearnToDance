@@ -21,6 +21,9 @@ const Courses: React.FC = () => {
             <Grid item={true} container={true} xs={6}>
                 <Card name="Hip Hop" url="/hiphop"/>
             </Grid>
+          <Grid item={true} container={true} xs={6}>
+            <Card name="Popping" url="/popping"/>
+          </Grid>
         </>
     );
   }
